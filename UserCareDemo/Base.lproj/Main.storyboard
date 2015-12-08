@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Un5-E3-sbe">
+                                <rect key="frame" x="273" y="28" width="55" height="30"/>
+                                <state key="normal" title="Init SDK"/>
+                                <connections>
+                                    <action selector="initSDK:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nWQ-1O-k0L"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSj-b9-rCf">
+                                <rect key="frame" x="265" y="104" width="72" height="30"/>
+                                <state key="normal" title="Open chat"/>
+                                <connections>
+                                    <action selector="openChat:" destination="BYZ-38-t0r" eventType="touchUpInside" id="03b-cx-Ili"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ev3-6J-Ozt">
+                                <rect key="frame" x="235" y="66" width="130" height="30"/>
+                                <state key="normal" title="Open landing page"/>
+                                <connections>
+                                    <action selector="openLandingPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1ss-Qk-qGD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ev3-6J-Ozt" firstAttribute="top" secondItem="Un5-E3-sbe" secondAttribute="bottom" constant="8" id="4Ta-Mb-55N"/>
+                            <constraint firstItem="Ev3-6J-Ozt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8cX-vb-kto"/>
+                            <constraint firstItem="Un5-E3-sbe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IGO-0t-gSd"/>
+                            <constraint firstItem="mSj-b9-rCf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ons-fS-aUo"/>
+                            <constraint firstItem="mSj-b9-rCf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="104" id="Uah-yJ-c62"/>
+                            <constraint firstItem="Ev3-6J-Ozt" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="66" id="jn5-IZ-cgI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="launchSDKButton" destination="Un5-E3-sbe" id="h5D-XA-C8Y"/>
+                        <outlet property="openChatButton" destination="mSj-b9-rCf" id="rzH-AJ-jgx"/>
+                        <outlet property="openLandingPageButton" destination="Ev3-6J-Ozt" id="2x9-2B-lZr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="332" y="389"/>
+        </scene>
+    </scenes>
+</document>

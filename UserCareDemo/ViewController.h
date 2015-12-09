@@ -16,11 +16,14 @@
 - (IBAction)initSDK:(id)sender;
 - (IBAction)openChat:(id)sender;
 - (IBAction)openLandingPage:(id)sender;
+- (IBAction)sendCustomEvent:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIButton *launchSDKButton;
 
 @property (weak, nonatomic) IBOutlet UIButton *openChatButton;
 @property (weak, nonatomic) IBOutlet UIButton *openLandingPageButton;
+@property (weak, nonatomic) IBOutlet UIButton *purchasesButton;
+@property (weak, nonatomic) IBOutlet UIButton *sendCustomEventButton;
 
 @property (weak, nonatomic) UIButton *openFAQButton;
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0113CDD81C18221800C0DC30 /* PurchasesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0113CDD71C18221800C0DC30 /* PurchasesViewController.m */; };
 		0114E6571BBD934E00979432 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0114E6561BBD934E00979432 /* main.m */; };
 		0114E65A1BBD934E00979432 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0114E6591BBD934E00979432 /* AppDelegate.m */; };
 		0114E65D1BBD934E00979432 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0114E65C1BBD934E00979432 /* ViewController.m */; };
@@ -32,6 +33,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0113CDD61C18221800C0DC30 /* PurchasesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchasesViewController.h; sourceTree = "<group>"; };
+		0113CDD71C18221800C0DC30 /* PurchasesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchasesViewController.m; sourceTree = "<group>"; };
 		0114E6521BBD934E00979432 /* UserCareDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserCareDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0114E6561BBD934E00979432 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0114E6581BBD934E00979432 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -86,6 +89,8 @@
 				0114E6631BBD934F00979432 /* LaunchScreen.storyboard */,
 				0114E6661BBD934F00979432 /* Info.plist */,
 				0114E6551BBD934E00979432 /* Supporting Files */,
+				0113CDD61C18221800C0DC30 /* PurchasesViewController.h */,
+				0113CDD71C18221800C0DC30 /* PurchasesViewController.m */,
 			);
 			path = UserCareDemo;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0114E65D1BBD934E00979432 /* ViewController.m in Sources */,
+				0113CDD81C18221800C0DC30 /* PurchasesViewController.m in Sources */,
 				0114E65A1BBD934E00979432 /* AppDelegate.m in Sources */,
 				0114E6571BBD934E00979432 /* main.m in Sources */,
 			);

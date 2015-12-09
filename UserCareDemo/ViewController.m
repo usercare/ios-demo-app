@@ -10,23 +10,11 @@
 
 #import <UserCareSDK/UserCareSDK.h>
 #import "AppDelegate.h"
-
-@interface UCManager ();
-
-+ (void)setServerPort:(NSInteger)newPort;
-
-+ (NSInteger)getServerPort;
-
-+ (void)setServerURL:(NSString *)serverURL;
-
-+ (NSString *)getServerURL;
-
-@end
+#import "PurchasesViewController.h"
 
 @interface ViewController ()
 
 @property (nonatomic, strong) UCManager *usercareInstance;
-
 
 @end
 
@@ -64,11 +52,10 @@
           
             self.openFAQButton.center = self.view.center;
             self.launchSDKButton.enabled = NO;
-            
+            self.purchasesButton.enabled = YES;
             
             self.openLandingPageButton.enabled = self.usercareInstance.isLandingPageEnabled;
             self.openChatButton.enabled = self.usercareInstance.isLiveChatEnabled;
- 
         });
         
     } failure:^(NSError *error) {
@@ -76,7 +63,6 @@
         alert.delegate = self;
         [alert show];
     }];
-    
 }
 
 - (IBAction)initSDK:(id)sender
@@ -92,5 +78,16 @@
     [self.usercareInstance presentLandingPageWithParent:self];
 }
 
+- (IBAction)sendCustomEvent:(id)sender {
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Send custom event" message:@"Input event name without spaces." delegate:self cancelButtonTitle:@"Send" otherButtonTitles:nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [[UCEventLogger sharedInstance] sendEvent:[[alertView textFieldAtIndex:0] text]];
+}
 
 @end

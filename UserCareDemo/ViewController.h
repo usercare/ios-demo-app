@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <UserCareSDK/UserCareSDK.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UCDelegate>
 
 - (void)appStartedWithPushMessage:(NSDictionary *)message;
 - (void)receivedPushMessage:(NSDictionary *)message;

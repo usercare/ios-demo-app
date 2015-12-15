@@ -90,4 +90,20 @@
     [[UCEventLogger sharedInstance] sendEvent:[[alertView textFieldAtIndex:0] text]];
 }
 
+#pragma mark - UCDelegate methods
+
+- (void)onBonusMessageReceived:(UCBonusEntity *)bonusEntity
+{
+
+}
+- (void)usercareSdkFailedWithError:(NSError *)error
+{
+
+}
+- (void)usercareSdkFailedWithError:(NSError *)error withStatusCode:(NSInteger)statusCode
+{
+
+}
+
+
 @end

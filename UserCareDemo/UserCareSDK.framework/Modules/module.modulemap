@@ -1,0 +1,6 @@
+framework module UserCareSDK {
+  umbrella header "UserCareSDK.h"
+
+  export *
+  module * { export * }
+}

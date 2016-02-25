@@ -1,11 +1,3 @@
-//
-//  PurchasesViewController.m
-//  UserCareDemo
-//
-//  Created by andrey.bolshakov on 12/9/15.
-//  Copyright © 2015 UserCare. All rights reserved.
-//
-
 #import "PurchasesViewController.h"
 
 @interface PurchasesViewController ()

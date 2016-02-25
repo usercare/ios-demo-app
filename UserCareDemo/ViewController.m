@@ -1,11 +1,3 @@
-//
-//  ViewController.m
-//  UserCareDemo
-//
-//  Created by andrey.bolshakov on 10/1/15.
-//  Copyright © 2015 UserCare. All rights reserved.
-//
-
 #import "ViewController.h"
 
 #import <UserCareSDK/UserCareSDK.h>
@@ -87,12 +79,12 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    [[UCEventLogger sharedInstance] sendEvent:[[alertView textFieldAtIndex:0] text]];
+    [[UCEventLogger sharedInstance] sendEvent:[[alertView textFieldAtIndex:0] text] withCustomParameters:nil];
 }
 
 #pragma mark - UCDelegate methods
 
-- (void)onBonusMessageReceived:(UCBonusEntity *)bonusEntity
+- (void)onActionMessageReceived:(UCActionEntity *)actionEntity
 {
 
 }
@@ -105,5 +97,14 @@
 
 }
 
+- (void)onSystemMessageReceived:(NSString *)message
+{
+    
+}
+
+- (void)onSupporterMessageReceived:(NSString *)message
+{
+    
+}
 
 @end

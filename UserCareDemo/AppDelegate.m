@@ -1,11 +1,3 @@
-//
-//  AppDelegate.m
-//  UserCareDemo
-//
-//  Created by andrey.bolshakov on 10/1/15.
-//  Copyright © 2015 UserCare. All rights reserved.
-//
-
 #import "AppDelegate.h"
 #import "ViewController.h"
 @interface AppDelegate ()

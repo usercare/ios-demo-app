@@ -13,7 +13,7 @@
 
 @interface UCEventsPurchaseHelper : NSObject
 
-@property (nonatomic, weak) id<UCEventsPurchaseHelperDelegate> delegate;
+@property (nonatomic, weak) id <UCEventsPurchaseHelperDelegate> delegate;
 
 - (instancetype)initWithProductsIdsArray:(NSArray *)productIdsArray;
 - (void)launchPurchaseFlow:(NSString *)productId;

@@ -1,11 +1,3 @@
-//
-//  ViewController.h
-//  UserCareDemo
-//
-//  Created by andrey.bolshakov on 10/1/15.
-//  Copyright © 2015 UserCare. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 #import <UserCareSDK/UserCareSDK.h>
 

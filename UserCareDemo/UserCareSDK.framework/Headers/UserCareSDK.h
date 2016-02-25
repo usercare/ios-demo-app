@@ -1,11 +1,3 @@
-//
-//  UserCareSDK.h
-//  UserCareSDK
-//
-//  Created by andrey.bolshakov on 9/22/15.
-//  Copyright © 2015 UserCare. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 
 //! Project version number for UserCareSDK.
@@ -18,6 +10,11 @@ FOUNDATION_EXPORT const unsigned char UserCareSDKVersionString[];
 
 
 #import <UserCareSDK/UCManager.h>
-#import <UserCareSDK/UCLiveChatClient.h>
 #import <UserCareSDK/UCEventLogger.h>
 #import <UserCareSDK/UCEventsPurchaseHelper.h>
+#import <UserCareSDK/UCActionEntity.h>
+#import <UserCareSDK/UCSettings.h>
+#import <UserCareSDK/UCButtonStyle.h>
+#import <UserCareSDK/UCTextStyle.h>
+#import <UserCareSDK/UCEvent.h>
+#import <UserCareSDK/UCUtils.h>

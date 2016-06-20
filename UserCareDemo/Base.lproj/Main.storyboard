@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,108 +17,87 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Un5-E3-sbe">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Un5-E3-sbe">
                                 <rect key="frame" x="273" y="28" width="55" height="30"/>
                                 <state key="normal" title="Init SDK"/>
                                 <connections>
                                     <action selector="initSDK:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nWQ-1O-k0L"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSj-b9-rCf">
-                                <rect key="frame" x="264" y="104" width="72" height="30"/>
-                                <state key="normal" title="Open chat"/>
-                                <connections>
-                                    <action selector="openChat:" destination="BYZ-38-t0r" eventType="touchUpInside" id="03b-cx-Ili"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ev3-6J-Ozt">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ev3-6J-Ozt">
                                 <rect key="frame" x="235" y="66" width="130" height="30"/>
                                 <state key="normal" title="Open landing page"/>
                                 <connections>
                                     <action selector="openLandingPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1ss-Qk-qGD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mci-H7-t3l">
-                                <rect key="frame" x="264" y="149" width="72" height="30"/>
-                                <state key="normal" title="Purchases"/>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSj-b9-rCf">
+                                <rect key="frame" x="264" y="104" width="72" height="30"/>
+                                <state key="normal" title="Open chat"/>
                                 <connections>
-                                    <segue destination="aoC-gz-V5t" kind="presentation" id="p0J-PC-MpQ"/>
+                                    <action selector="openChat:" destination="BYZ-38-t0r" eventType="touchUpInside" id="03b-cx-Ili"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1F-DI-xvT">
-                                <rect key="frame" x="234" y="535" width="132" height="30"/>
+                                <rect key="frame" x="234" y="142" width="132" height="30"/>
                                 <state key="normal" title="Send custom event"/>
                                 <connections>
                                     <action selector="sendCustomEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pWf-Bq-Tla"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4H-yP-f45" userLabel="Buy 25 Coins Button">
+                                <rect key="frame" x="256" y="180" width="89" height="30"/>
+                                <state key="normal" title="Buy 25 coins"/>
+                                <connections>
+                                    <action selector="sendPurchaseEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x67-37-5zW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJ2-ft-nNA" userLabel="Crash Event Button">
+                                <rect key="frame" x="259" y="256" width="83" height="30"/>
+                                <state key="normal" title="Crash event"/>
+                                <connections>
+                                    <action selector="sendCrashEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sig-nL-ayQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBq-d2-qwu" userLabel="Purchase Failed Button">
+                                <rect key="frame" x="247" y="218" width="106" height="30"/>
+                                <state key="normal" title="Purchase failed"/>
+                                <connections>
+                                    <action selector="sendPurchaseFailedEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u8f-LU-pcJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="FBq-d2-qwu" firstAttribute="top" secondItem="K4H-yP-f45" secondAttribute="bottom" constant="8" id="0D7-Sf-9Dm"/>
+                            <constraint firstItem="K4H-yP-f45" firstAttribute="top" secondItem="L1F-DI-xvT" secondAttribute="bottom" constant="8" id="1ed-2k-Jm4"/>
                             <constraint firstItem="L1F-DI-xvT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3d3-gK-5uD"/>
                             <constraint firstItem="Ev3-6J-Ozt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8cX-vb-kto"/>
+                            <constraint firstItem="L1F-DI-xvT" firstAttribute="top" secondItem="mSj-b9-rCf" secondAttribute="bottom" constant="8" id="E25-CN-rmC"/>
+                            <constraint firstItem="FBq-d2-qwu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EDM-6x-8Dk"/>
+                            <constraint firstItem="CJ2-ft-nNA" firstAttribute="top" secondItem="FBq-d2-qwu" secondAttribute="bottom" constant="8" id="GKF-t0-x8D"/>
                             <constraint firstItem="Un5-E3-sbe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IGO-0t-gSd"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="L1F-DI-xvT" secondAttribute="bottom" constant="35" id="NEy-PN-thL"/>
                             <constraint firstItem="mSj-b9-rCf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ons-fS-aUo"/>
+                            <constraint firstItem="CJ2-ft-nNA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tgj-42-LfC"/>
                             <constraint firstItem="mSj-b9-rCf" firstAttribute="top" secondItem="Ev3-6J-Ozt" secondAttribute="bottom" constant="8" id="UWa-qW-NvO"/>
-                            <constraint firstItem="mci-H7-t3l" firstAttribute="top" secondItem="mSj-b9-rCf" secondAttribute="bottom" constant="15" id="bIF-i0-s3V"/>
+                            <constraint firstItem="Un5-E3-sbe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Y7N-fx-cKY"/>
                             <constraint firstItem="Ev3-6J-Ozt" firstAttribute="top" secondItem="Un5-E3-sbe" secondAttribute="bottom" constant="8" id="nlp-sR-Bzb"/>
-                            <constraint firstItem="mci-H7-t3l" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="scu-JP-gGJ"/>
+                            <constraint firstItem="K4H-yP-f45" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xIH-IC-1tO"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="launchSDKButton" destination="Un5-E3-sbe" id="h5D-XA-C8Y"/>
                         <outlet property="openChatButton" destination="mSj-b9-rCf" id="rzH-AJ-jgx"/>
                         <outlet property="openLandingPageButton" destination="Ev3-6J-Ozt" id="2x9-2B-lZr"/>
-                        <outlet property="purchasesButton" destination="mci-H7-t3l" id="2jo-VT-W6s"/>
+                        <outlet property="sendCrashEventButton" destination="CJ2-ft-nNA" id="ZSP-J1-scv"/>
                         <outlet property="sendCustomEventButton" destination="L1F-DI-xvT" id="k23-NB-asB"/>
+                        <outlet property="sendPurchaseEventButton" destination="K4H-yP-f45" id="WY6-9o-puj"/>
+                        <outlet property="sendPurchaseFailedEventButton" destination="FBq-d2-qwu" id="bTm-cO-qIG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="332" y="389"/>
-        </scene>
-        <!--Purchases View Controller-->
-        <scene sceneID="bkb-Yz-jE0">
-            <objects>
-                <viewController id="aoC-gz-V5t" customClass="PurchasesViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="LOh-ep-nCU"/>
-                        <viewControllerLayoutGuide type="bottom" id="Dn7-OA-os9"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hGM-Qz-nby">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="This screen demonstrates usage of purchase events API" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTV-Lf-aa5">
-                                <rect key="frame" x="174" y="74" width="252" height="98"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0H-kc-vBD">
-                                <rect key="frame" x="239" y="256" width="123" height="30"/>
-                                <state key="normal" title="Perform purchase"/>
-                                <connections>
-                                    <action selector="performPurchase:" destination="aoC-gz-V5t" eventType="touchUpInside" id="8UX-Os-6Qa"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="kTV-Lf-aa5" firstAttribute="centerX" secondItem="hGM-Qz-nby" secondAttribute="centerX" id="4ub-kI-al3"/>
-                            <constraint firstItem="F0H-kc-vBD" firstAttribute="centerX" secondItem="hGM-Qz-nby" secondAttribute="centerX" id="8YU-2D-Led"/>
-                            <constraint firstItem="F0H-kc-vBD" firstAttribute="top" secondItem="LOh-ep-nCU" secondAttribute="bottom" constant="31" id="heD-fT-A0l"/>
-                            <constraint firstItem="F0H-kc-vBD" firstAttribute="centerX" secondItem="hGM-Qz-nby" secondAttribute="centerX" id="p9D-iC-4wc"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="label" destination="kTV-Lf-aa5" id="g2s-Tj-ZZi"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="37a-zG-3wb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1100" y="389"/>
         </scene>
     </scenes>
 </document>

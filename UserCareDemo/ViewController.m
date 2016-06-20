@@ -40,8 +40,6 @@ typedef NS_ENUM(NSUInteger, UCAlertType){
     
     settings.appId = @"input_app_id";
     settings.eventsAPIKey = @"input_API_key";
-    settings.appId = @"G11iVTCDb_cwd2HT9aDV-A";
-    settings.eventsAPIKey = @"AHS7ZVB5NJMZM000QS2FF5SJPDJSXAQGV2C4OFK6WA";
     settings.pushNotificationToken = pushToken;
     
     if (![self validateSettings: settings]) {

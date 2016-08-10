@@ -42,16 +42,12 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
-    ViewController *root = (ViewController *) [UIApplication sharedApplication].keyWindow.rootViewController;
-    
-    if ([root isKindOfClass:[ViewController class]]) {
-        [root receivedPushMessage:userInfo];
-    }
+    [[UCManager push] didReceiveRemoteNotification:userInfo];
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
-    self.pushToken = deviceToken;
+    [[UCManager push] registeredForPushNotifications:deviceToken];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error

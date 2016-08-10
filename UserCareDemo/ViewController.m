@@ -3,6 +3,9 @@
 #import <UserCareSDK/UserCareSDK.h>
 #import "AppDelegate.h"
 
+static NSString *const kUCAppID = @"input_app_id"; // Please replace with your APP ID
+static NSString *const kUCEventsApiKey = @"input_API_key"; // Please replace with your EVENTS API KEY
+
 typedef NS_ENUM(NSUInteger, UCAlertType){
     kAlertCustomEvent = 0,
     kAlertPurchaseEvent,
@@ -12,8 +15,6 @@ typedef NS_ENUM(NSUInteger, UCAlertType){
 
 @interface ViewController ()
 
-@property (nonatomic, strong) UCManager *usercareInstance;
-
 @end
 
 @implementation ViewController
@@ -22,36 +23,32 @@ typedef NS_ENUM(NSUInteger, UCAlertType){
 {
     [self initializeSDK];
     
-    [self.usercareInstance receivedPushNotification:message];
+    [[UCManager push] didReceiveRemoteNotification:message];
 }
 
 - (void)receivedPushMessage:(NSDictionary *)message
 {
-    [self.usercareInstance receivedPushNotification:message];
+    [[UCManager push] didReceiveRemoteNotification:message];
 }
 
 - (void)initializeSDK
 {
-    NSData *pushToken = ((AppDelegate *) [UIApplication sharedApplication].delegate).pushToken;
+    NSData *pushToken = [UCManager push].pushToken;
     
-    [UCManager setDeviceId:[NSString stringWithFormat:@"ifv:%@", [UIDevice currentDevice].identifierForVendor.UUIDString]];
-    
-    UCManagerSettings *settings = [[UCManagerSettings alloc] init];
-    
-    settings.appId = @"input_app_id";
-    settings.eventsAPIKey = @"input_API_key";
+    UCManagerSettings *settings = [UCManagerSettings settingsWithAppId:kUCAppID
+                                                       andEventsApiKey:kUCEventsApiKey];
     settings.pushNotificationToken = pushToken;
     
     if (![self validateSettings: settings]) {
         return;
     }
     
-    self.usercareInstance = [UCManager startServiceWithSettings:settings completion:^{
+    [UCManager startServiceWithSettings:settings completion:^{
         dispatch_async(dispatch_get_main_queue(), ^{
             
             if (self.openFAQButton) [self.openFAQButton removeFromSuperview];
             
-            self.openFAQButton = [self.usercareInstance createFAQButton];
+            self.openFAQButton = [[UCManager sharedInstance] createFAQButton];
             
             [self.view addSubview:self.openFAQButton];
           
@@ -62,8 +59,8 @@ typedef NS_ENUM(NSUInteger, UCAlertType){
             self.sendPurchaseFailedEventButton.enabled = YES;
             self.sendCrashEventButton.enabled = YES;
             
-            self.openLandingPageButton.enabled = self.usercareInstance.isLandingPageEnabled;
-            self.openChatButton.enabled = self.usercareInstance.isLiveChatEnabled;
+            self.openLandingPageButton.enabled = [UCManager sharedInstance].isLandingPageEnabled;
+            self.openChatButton.enabled = [UCManager sharedInstance].isLiveChatEnabled;
         });
         
     } failure:^(NSError *error) {
@@ -89,11 +86,11 @@ typedef NS_ENUM(NSUInteger, UCAlertType){
 }
 - (IBAction)openChat:(id)sender
 {
-    [self.usercareInstance presentLiveChatWithParent:self];
+    [[UCManager sharedInstance] presentLiveChatWithParent:self];
 }
 - (IBAction)openLandingPage:(id)sender
 {
-    [self.usercareInstance presentLandingPageWithParent:self];
+    [[UCManager sharedInstance] presentLandingPageWithParent:self];
 }
 
 - (IBAction)sendCustomEvent:(id)sender
@@ -144,7 +141,7 @@ typedef NS_ENUM(NSUInteger, UCAlertType){
 {
     switch (alertView.tag) {
         case kAlertCustomEvent:
-            [[UCEventLogger sharedInstance] sendEvent:[[alertView textFieldAtIndex:0] text] withCustomParameters:nil];
+            [[UCEventLogger sharedInstance] sendEvent:[[alertView textFieldAtIndex:0] text] withUserData:nil];
             break;
         case kAlertPurchaseEvent:
             [self purchaseItem:YES];

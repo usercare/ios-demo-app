@@ -42,6 +42,7 @@
 		0114E6661BBD934F00979432 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		721C8CA0887A504053857268 /* Pods-UserCareDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserCareDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-UserCareDemo/Pods-UserCareDemo.release.xcconfig"; sourceTree = "<group>"; };
 		A8F1189D90A566B82FBE44E7 /* libPods-UserCareDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UserCareDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED0235001DC7AAB400DFB0FA /* UserCareDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UserCareDemo.entitlements; sourceTree = "<group>"; };
 		FE783525CCAD8B2D6762A0D6 /* Pods-UserCareDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserCareDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UserCareDemo/Pods-UserCareDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +79,7 @@
 		0114E6541BBD934E00979432 /* UserCareDemo */ = {
 			isa = PBXGroup;
 			children = (
+				ED0235001DC7AAB400DFB0FA /* UserCareDemo.entitlements */,
 				0114E6581BBD934E00979432 /* AppDelegate.h */,
 				0114E6591BBD934E00979432 /* AppDelegate.m */,
 				0114E65B1BBD934E00979432 /* ViewController.h */,
@@ -146,7 +148,7 @@
 		0114E64A1BBD934E00979432 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = UserCare;
 				TargetAttributes = {
 					0114E6511BBD934E00979432 = {
@@ -288,8 +290,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -332,8 +336,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -362,6 +368,7 @@
 			baseConfigurationReference = FE783525CCAD8B2D6762A0D6 /* Pods-UserCareDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = UserCareDemo/UserCareDemo.entitlements;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -380,6 +387,7 @@
 			baseConfigurationReference = 721C8CA0887A504053857268 /* Pods-UserCareDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = UserCareDemo/UserCareDemo.entitlements;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

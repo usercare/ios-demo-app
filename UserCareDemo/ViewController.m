@@ -33,11 +33,8 @@ typedef NS_ENUM(NSUInteger, UCAlertType){
 
 - (void)initializeSDK
 {
-    NSData *pushToken = [UCManager push].pushToken;
-    
     UCManagerSettings *settings = [UCManagerSettings settingsWithAppId:kUCAppID
                                                        andEventsApiKey:kUCEventsApiKey];
-    settings.pushNotificationToken = pushToken;
     
     if (![self validateSettings: settings]) {
         return;
@@ -113,7 +110,7 @@ typedef NS_ENUM(NSUInteger, UCAlertType){
 
 - (IBAction)sendCrashEvent:(id)sender
 {
-        [self showAlert:@"Crash event" message:@"Would you like to crash the app?" sendTitle:@"Crash" withType:kAlertCrashEvent];
+    [self showAlert:@"Crash event" message:@"Would you like to crash the app?" sendTitle:@"Crash" withType:kAlertCrashEvent];
 }
 
 - (void)purchaseItem:(BOOL)isSuccessful

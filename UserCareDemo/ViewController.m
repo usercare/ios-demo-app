@@ -19,6 +19,13 @@ typedef NS_ENUM(NSUInteger, UCAlertType){
 
 @implementation ViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Reset customer tags at start (not necessary, but we will clear just for example).
+    [UCManager setTags:nil];
+}
+
 - (void)appStartedWithPushMessage:(NSDictionary *)message
 {
     [self initializeSDK];
@@ -125,6 +132,12 @@ typedef NS_ENUM(NSUInteger, UCAlertType){
     event.transactionTime = [UCUtils currentFormattedTimeForEvents];
     
     [[UCEventLogger sharedInstance] sendEventWithEvent:event];
+    /**
+     Whether operation was successful or not, we apply customer to specific Queue using tags. 
+     Please define specific queue at Agent dashboard before testing it. 
+     Once tag applied, you can open messaging window to get started.
+     */
+    [UCManager setTag:isSuccessful? @"Purchase Successful" : @"Purchase Failed"];
 }
 
 - (void)showAlert:(NSString *)title message:(NSString *)message sendTitle:(NSString *)sendTitle withType:(UCAlertType)alertType
@@ -159,10 +172,17 @@ typedef NS_ENUM(NSUInteger, UCAlertType){
 
 #pragma mark - UCDelegate methods
 
-- (void)onActionMessageReceived:(UCActionEntity *)actionEntity
+- (BOOL)handleAction:(AiPushInAppAction *)action executionError:(NSError **)error
 {
-
+    if ([@"test_callback" isEqualToString:action.callbackName]) {
+        NSLog(@"handled action callback %@ with data: %@", action.callbackName, action.callbackData);
+    } else {
+        *error = [NSError errorWithDomain:[NSString stringWithFormat:@"Unknown callback '%@'. Please create action with callback name '%@' or 'test_callback' and check once again.", action.callbackName, action.callbackName] code:1 userInfo:nil];
+    }
+    
+    return NO;
 }
+
 - (void)usercareSdkFailedWithError:(NSError *)error
 {
 

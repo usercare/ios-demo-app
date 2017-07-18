@@ -43,6 +43,9 @@ typedef NS_ENUM(NSUInteger, UCAlertType){
     UCManagerSettings *settings = [UCManagerSettings settingsWithAppId:kUCAppID
                                                        andEventsApiKey:kUCEventsApiKey];
     
+    // To set locale manually, simply uncomment this line:
+    // settings.customLocale = [NSLocale localeWithLocaleIdentifier:@"en_US"];
+    
     if (![self validateSettings: settings]) {
         return;
     }
